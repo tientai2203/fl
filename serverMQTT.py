@@ -3,15 +3,16 @@ import random
 import time
 from paho.mqtt import client as mqtt_server
 
-broker = 'broker.emqx.io'
+#broker = 'broker.emqx.io'
+broker = "192.168.10.129"
 port = 1883
 topic = "python/rev_model"
 
 client_id = f'publish-{random.randint(0, 1000)}'
 
-#file_path = "D:\WorkSpace\Test_DFL\FashionMnist_Dataset\FashionMnist.pt"
-file_path = "D:\WorkSpace\Test_DFL\MQTT.txt"
-#file_path = "D:\WorkSpace\Test_DFL\FashionMnist.pt"
+file_path = "D:\WorkSpace\Test_DFL\FashionMnist_Dataset\FashionMnist.pt"
+#file_path = "D:\WorkSpace\Test_DFL\MQTT.txt"
+
 
 def connect_mqtt():
     def on_connect(client, userdata, flags, rc):

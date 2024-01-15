@@ -5,7 +5,8 @@ import time
 from paho.mqtt import client as mqtt_client
 import os
 
-broker = 'broker.emqx.io'
+#broker = 'broker.emqx.io'
+broker = "192.168.10.129"
 port = 1883
 topic = "python/rev_model"
 client_id = f'subscribe-{random.randint(0, 100)}'
@@ -29,9 +30,9 @@ def on_message(client, userdata, msg):
 
 def handle_rev(client, userdata, msg):
     if msg.payload:
-        print("File mymodel.pth đã được tạo và đang lưu...")
+        print("File mymodel.pt đã được tạo và đang lưu...")
         payload_str = msg.payload  
-        with open("mymodel.txt", "ab") as file:
+        with open("mymodel.pt", "ab") as file:
             file.write(payload_str)
     else:    
         print("Payload rỗng. Không tạo được file.")
